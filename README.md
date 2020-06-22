@@ -3,7 +3,7 @@ SEI R12 Tomagotchi Project
 
 
 
-Functions/Methods:
+<b>Functions/Methods:</b>
 
 feedPet
 
