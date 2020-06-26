@@ -38,8 +38,8 @@ evolvePet(morph/grow)
 
 1 user input for tomatchi name, and a button "Create"
 
-3x Buttons: Feed Pet, Play w/ Pet, Put pet to sleep/wake pet up(lights out/lights on)
-
+8x Buttons: Feed Pet, Play w/ Pet, Put pet to sleep/wake pet up(lights out/lights on)
+New and End Game
 
 <b>Global class buttons:</b>
 
@@ -48,4 +48,6 @@ Take pet to doctor(sickPet)
 EVOLVE!(if pet level > 10, evolve/morph to next level)
 
 Create 2nd Pet(tomagotchi birth/secondPet)
+
+<b>Points go down every three seconds, if any values hit zero, pet dies</b>
 

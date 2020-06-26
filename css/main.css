@@ -27,10 +27,17 @@ h1 {
 }
 #game-window {
     width: 300px;
-    height: 300px;
+    height: 350px;
     border: solid 2px blue;
     margin: 10px;
     padding: 10px;
+}
+#game-window img {
+    /*https://cdn.drawception.com/drawings/L5Oy5CCyMh.png*/
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    height: 50%;
 }
 .controls {
     display: flex;
