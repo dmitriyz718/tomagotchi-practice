@@ -75,9 +75,11 @@ class tomagotchi {
         this.boredom = this.boredom + 1;
     };
     birth() {
-        let babyImg = document.createElement('img');
+        let babyImg = document.createElement(`img`);
+        let babyDiv = document.createElement(`div`);
         babyImg.src = `images/baby.jpg`;
-        document.getElementById('#game-window').appendChild(babyImg);
+        document.body.append(babyDiv);
+        document.querySelector(`div:last-child`).append(babyImg);
     }
 }
 //new game button

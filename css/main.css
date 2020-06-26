@@ -27,6 +27,7 @@ h1 {
 }
 #game-window {
     display: flex;
+    flex-direction: column;
     text-align: center;
     align-content: center;
     width: 300px;
@@ -37,6 +38,8 @@ h1 {
 }
 #game-window img {
     /*https://cdn.drawception.com/drawings/L5Oy5CCyMh.png*/
+    display: flex;
+    flex-direction: row;
     align-items: center;
     text-align: center;
     width: 80%;
