@@ -9,6 +9,8 @@ const fire = document.getElementById(`fire`);
 const sleep = document.getElementById(`sleep`);
 const gameWin = document.getElementById(`game-window`);
 const endGame = document.getElementById(`end-game`);
+let age = 0;
+let goOrNo = true;
 
 class tomagotchi {
     constructor(hunger = 10, boredom = 10, sleep = 10, name = `Dima`) {
@@ -65,6 +67,7 @@ class tomagotchi {
         myImage.attr(`src`, `images/deadpet.png`);
         console.log(`end game clicked`)
         gameWin.querySelector(`p`).innerHTML = (`${newGo.name}'s current state: dead`);
+        goOrNo = false;
         return 0;
     };
     newPet() {
@@ -121,14 +124,19 @@ endGame.addEventListener(`click`, () => {
 });
 //check time loop
 function checkTime() {
-    newGo.sleep = newGo.sleep - 1;
-    newGo.health = newGo.health - 1;
-    newGo.boredom = newGo.boredom - 1;
-    newGo.hunger = newGo.hunger - 1;
-    if (newGo.sleep === 0 || newGo.health === 0 || newGo.boredom === 0 || newGo.hunger === 0) {
-        newGo.endGame();
-    } else {
-        gameWin.querySelector(`p`).innerHTML = (`${newGo.name}'s current stats:<p>Health: ${newGo.health}</p><p>Boredom: ${newGo.boredom}</p><p>Sleep: ${newGo.sleep}</p><p>Hunger: ${newGo.hunger}</p>`);
+    switch (goOrNo) {
+        case true:
+            age = age + 1 // coulda used += on all of these but for some reason it was giving me problems
+            newGo.sleep = newGo.sleep - 1;
+            newGo.health = newGo.health - 1;
+            newGo.boredom = newGo.boredom - 1;
+            newGo.hunger = newGo.hunger - 1;
+            if (newGo.sleep === 0 || newGo.health === 0 || newGo.boredom === 0 || newGo.hunger === 0) {
+                newGo.endGame();
+            } else {
+                gameWin.querySelector(`p`).innerHTML = (`${newGo.name}'s current stats:<p>Health: ${newGo.health}</p><p>Boredom: ${newGo.boredom}</p><p>Sleep: ${newGo.sleep}</p><p>Hunger: ${newGo.hunger}</p><p>Current Age: ${age}`);
+            }
+        case false:
     }
 };
 window.setInterval(checkTime, 3000);
