@@ -46,7 +46,9 @@ class tomagotchi {
     };
     evolve() {
         console.log(`evolve clicked`);
+        myImage.attr(`src`, `images/vapo.png`);
         this.health = this.health + 1;
+        setHealth(20);
     };
     set setHealth(max = 20) {
         this.health = max;
@@ -72,23 +74,36 @@ class tomagotchi {
         this.boredom = this.boredom + 1;
     };
 }
+//new game button
 let newGo = null;
 const newStart = document.getElementById(`new-game`);
 newStart.addEventListener(`click`, function () {
     newGo = new tomagotchi();
     newGo.newGame();
-    play.addEventListener(`click`, newGo.play());
-    feed.addEventListener(`click`, newGo.feed());
-    sleep.addEventListener(`click`, newGo.putSleep());
-    fire.addEventListener(`click`, newGo.fire());
 });
 
-
+//add click event listeners
+play.addEventListener(`click`, function () {
+    newGo.play();
+});
+feed.addEventListener(`click`, function () {
+    newGo.feed()
+});
+sleep.addEventListener(`click`, function () {
+    newGo.putSleep()
+});
+fire.addEventListener(`click`, function () {
+    newGo.fire()
+});
+evolve.addEventListener(`click`, function () {
+    newGo.evolve()
+});
+//check time loop
 function checkTime() {
-    newGo.sleep -= 1;
-    newGo.health -= 1;
-    newGo.boredom -= 1;
-    newGo.hunger -= 1;
+    newGo.sleep = newGo.sleep - 1;
+    newGo.health = newGo.health - 1;
+    newGo.boredom = newGo.boredom - 1;
+    newGo.hunger = newGo.hunger - 1;
     if (newGo.sleep === 0 || newGo.health === 0 || newGo.boredom === 0 || newGo.hunger === 0) {
         newGo.endGame();
     } else {
@@ -97,7 +112,7 @@ function checkTime() {
 };
 window.setInterval(checkTime, 3000);
 
-/* play.onclick = newGo.play();
-feed.addEventListener = newGo.feed();
+evolve.onclick = newGo.evolve();
+/* feed.addEventListener = newGo.feed();
 sleep.addEventListener = newGo.putSleep();
 fire.addEventListener = newGo.fire(); */
