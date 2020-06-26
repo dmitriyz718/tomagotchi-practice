@@ -34,6 +34,7 @@ h1 {
 }
 #game-window {
     display: flex;
+    position: relative;
     flex-direction: column;
     text-align: center;
     align-content: center;
@@ -45,6 +46,12 @@ h1 {
 }
 #game-window img {
     /*https://cdn.drawception.com/drawings/L5Oy5CCyMh.png*/
+/*   position:absolute;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out; */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -52,6 +59,20 @@ h1 {
     width: 80%;
     height: 50%;
 }
+.evolved {
+  position:relative;
+  left:0;
+  -webkit-transition: opacity 3s ease-in-out;
+  -moz-transition: opacity 3s ease-in-out;
+  -o-transition: opacity 3s ease-in-out;
+  transition: opacity 3s ease-in-out;
+}
+/* #game-window img.transparent {
+opacity:0;
+}
+#picture_onClick {
+cursor:pointer;
+} */
 .controls {
     display: flex;
     justify-content: space-between;

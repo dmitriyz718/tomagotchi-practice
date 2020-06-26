@@ -53,6 +53,7 @@ class tomagotchi {
         console.log(`evolve clicked`);
         const myImageEvolve = $(`#game-window img`); //only instance of jQuery
         myImageEvolve.attr(`src`, `images/vapo.png`);
+        myImageEvolve.attr(`class`, `evolved`);
         this.health = this.health + 1;
         this.setHealth;
     };
