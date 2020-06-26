@@ -34,19 +34,19 @@ class tomagotchi {
     }
     play() {
         console.log(`play clicked`);
-        this.boredom += 1;
+        this.boredom = this.boredom + 1;
     };
     putSleep() {
         console.log(`put sleep clicked`);
-        this.sleep += 1;
+        this.sleep = this.sleep + 1;
     };
     feed() {
         console.log(`feed clicked`);
-        this.hunger += 1;
+        this.hunger = this.hunger + 1;
     };
     evolve() {
         console.log(`evolve clicked`);
-        this.health += 1;
+        this.health = this.health + 1;
     };
     set setHealth(max = 20) {
         this.health = max;
@@ -58,7 +58,8 @@ class tomagotchi {
         const myImage = $(`#game-window img`);
         myImage.attr(`src`, `images/deadpet.png`);
         console.log(`end game clicked`)
-        break;
+        gameWin.querySelector(`p`).innerHTML = (`${newGo.name}'s current state: dead`);
+        return 0;
     };
     newPet() {
         console.log(`new pet/birth clicked`);
@@ -68,7 +69,7 @@ class tomagotchi {
     };
     fire() {
         console.log(`fire clicked`);
-        this.boredom += 1;
+        this.boredom = this.boredom + 1;
     };
 }
 let newGo = null;
@@ -96,7 +97,7 @@ function checkTime() {
 };
 window.setInterval(checkTime, 3000);
 
-play.onclick = newGo.play();
+/* play.onclick = newGo.play();
 feed.addEventListener = newGo.feed();
 sleep.addEventListener = newGo.putSleep();
-fire.addEventListener = newGo.fire();
+fire.addEventListener = newGo.fire(); */
