@@ -1,7 +1,7 @@
 # tomagotchi
 SEI R12 Tomagotchi Project
 
-
+[Wire Frame Link](https://rednetservices.com/tomagotchi/images/WireFrame.jpg)
 
 <b>Functions/Methods:</b>
 
