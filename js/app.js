@@ -40,23 +40,25 @@ class tomagotchi {
     putSleep() {
         console.log(`put sleep clicked`);
         this.sleep = this.sleep + 1;
+        this.health = this.health + 1;
     };
     feed() {
         console.log(`feed clicked`);
         this.hunger = this.hunger + 1;
+        this.health = this.health + 1;
     };
     evolve() {
         console.log(`evolve clicked`);
-        const myImageEvolve = $(`#game-window img`);
+        const myImageEvolve = $(`#game-window img`); //only instance of jQuery
         myImageEvolve.attr(`src`, `images/vapo.png`);
         this.health = this.health + 1;
-        setHealth(20);
+        this.setHealth;
     };
     set setHealth(max = 20) {
-        this.health = max;
+        this.health = this.health + max;
     };
     get healthState() {
-
+        return this.health;
     };
     endGame() {
         const myImage = $(`#game-window img`);
@@ -68,20 +70,24 @@ class tomagotchi {
     newPet() {
         console.log(`new pet/birth clicked`);
         if (this.health >= 20) {
-
+            let babyImg = document.createElement(`img`);
+            let babyDiv = document.createElement(`div`);
+            babyImg.src = `images/baby.jpg`;
+            document.body.append(babyDiv);
+            document.querySelector(`div:last-child`).append(babyImg);
         };
     };
     fire() {
         console.log(`fire clicked`);
         this.boredom = this.boredom + 1;
     };
-    birth() {
-        let babyImg = document.createElement(`img`);
-        let babyDiv = document.createElement(`div`);
-        babyImg.src = `images/baby.jpg`;
-        document.body.append(babyDiv);
-        document.querySelector(`div:last-child`).append(babyImg);
-    }
+    /*     birth() {
+            let babyImg = document.createElement(`img`);
+            let babyDiv = document.createElement(`div`);
+            babyImg.src = `images/baby.jpg`;
+            document.body.append(babyDiv);
+            document.querySelector(`div:last-child`).append(babyImg);
+        } */
 }
 //new game button
 let newGo = null;
@@ -108,7 +114,7 @@ evolve.addEventListener(`click`, () => {
     newGo.evolve()
 });
 birth.addEventListener(`click`, () => {
-    newGo.birth()
+    newGo.newPet()
 });
 endGame.addEventListener(`click`, () => {
     newGo.endGame()
