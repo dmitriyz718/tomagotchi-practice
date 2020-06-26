@@ -74,6 +74,11 @@ class tomagotchi {
         console.log(`fire clicked`);
         this.boredom = this.boredom + 1;
     };
+    birth() {
+        let babyImg = document.createElement('img');
+        babyImg.src = `images/baby.jpg`;
+        document.getElementById('#game-window').appendChild(babyImg);
+    }
 }
 //new game button
 let newGo = null;
@@ -98,6 +103,9 @@ fire.addEventListener(`click`, function () {
 });
 evolve.addEventListener(`click`, function () {
     newGo.evolve()
+});
+birth.addEventListener(`click`, function () {
+    newGo.birth()
 });
 //check time loop
 function checkTime() {
