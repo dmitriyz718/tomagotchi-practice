@@ -89,3 +89,16 @@ button {
     width: 70px;
     height: 50px;
 }
+    @media only screen and (max-width: 600px) {
+      body,
+      .controls,
+      #evolved,
+      #title,
+      #game-window
+      img,
+      h1,
+      div {
+        width: 100%;
+        margin: 0 auto;
+      }
+    }
