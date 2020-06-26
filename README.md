@@ -4,6 +4,7 @@ SEI R12 Tomagotchi Project
 [Wire Frame Link](https://rednetservices.com/tomagotchi/images/WireFrame.jpg)
 </p><p>
 [Game Link](https://rednetservices.com/tomagotchi)</p>
+<p>Edit 06/26: Going to work on animations over the weekend to get them sorted out.</p>
 <b>Functions/Methods:</b>
 
 feedPet
