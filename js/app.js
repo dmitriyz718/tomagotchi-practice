@@ -67,7 +67,7 @@ class tomagotchi {
         const myImage = $(`#game-window img`);
         myImage.attr(`src`, `images/deadpet.png`);
         console.log(`end game clicked`)
-        gameWin.querySelector(`p`).innerHTML = (`${newGo.name}'s current state: dead`);
+        gameWin.querySelector(`p`).innerHTML = (`Tomagotchi's current state: dead`);
         goOrNo = false;
         return 0;
     };
