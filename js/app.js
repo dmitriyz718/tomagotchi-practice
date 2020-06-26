@@ -58,7 +58,7 @@ class tomagotchi {
         const myImage = $(`#game-window img`);
         myImage.attr(`src`, `images/deadpet.png`);
         console.log(`end game clicked`)
-        return;
+        break;
     };
     newPet() {
         console.log(`new pet/birth clicked`);
@@ -68,6 +68,7 @@ class tomagotchi {
     };
     fire() {
         console.log(`fire clicked`);
+        this.boredom += 1;
     };
 }
 let newGo = null;
@@ -75,7 +76,12 @@ const newStart = document.getElementById(`new-game`);
 newStart.addEventListener(`click`, function () {
     newGo = new tomagotchi();
     newGo.newGame();
+    play.addEventListener(`click`, newGo.play());
+    feed.addEventListener(`click`, newGo.feed());
+    sleep.addEventListener(`click`, newGo.putSleep());
+    fire.addEventListener(`click`, newGo.fire());
 });
+
 
 function checkTime() {
     newGo.sleep -= 1;
@@ -89,3 +95,8 @@ function checkTime() {
     }
 };
 window.setInterval(checkTime, 3000);
+
+play.onclick = newGo.play();
+feed.addEventListener = newGo.feed();
+sleep.addEventListener = newGo.putSleep();
+fire.addEventListener = newGo.fire();
