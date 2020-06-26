@@ -8,6 +8,7 @@ const birth = document.getElementById(`birth`);
 const fire = document.getElementById(`fire`);
 const sleep = document.getElementById(`sleep`);
 const gameWin = document.getElementById(`game-window`);
+const endGame = document.getElementById(`end-game`);
 
 class tomagotchi {
     constructor(hunger = 10, boredom = 10, sleep = 10, name = `Dima`) {
@@ -91,23 +92,26 @@ newStart.addEventListener(`click`, function () {
 });
 
 //add click event listeners
-play.addEventListener(`click`, function () {
+play.addEventListener(`click`, () => {
     newGo.play();
 });
-feed.addEventListener(`click`, function () {
+feed.addEventListener(`click`, () => {
     newGo.feed()
 });
-sleep.addEventListener(`click`, function () {
+sleep.addEventListener(`click`, () => {
     newGo.putSleep()
 });
-fire.addEventListener(`click`, function () {
+fire.addEventListener(`click`, () => {
     newGo.fire()
 });
-evolve.addEventListener(`click`, function () {
+evolve.addEventListener(`click`, () => {
     newGo.evolve()
 });
-birth.addEventListener(`click`, function () {
+birth.addEventListener(`click`, () => {
     newGo.birth()
+});
+endGame.addEventListener(`click`, () => {
+    newGo.endGame()
 });
 //check time loop
 function checkTime() {
